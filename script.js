@@ -1,11 +1,28 @@
-const ul = document.querySelector("#ul").children;
+const ul = document.querySelector("#ul");
 const start = document.querySelector("#start");
 const finish = document.querySelector("#finish");
 
-finish.innerHTML = "0";
-start.innerHTML = "start";
 
-function findPath(arr, index) {
+
+function choose(event) {
+    console.log(event);
+    if (event.target.id ==  "ul") {
+         return;
+    }else{
+       event.target.style.backgroundColor= "#ff0000";
+    }
+    
+}
+
+ul.addEventListener('click', choose);
+
+
+
+
+
+
+
+/* function findPath(arr, index) {
     // exit
     if (arr[11].innerHTML == Number && arr[index].id != "wall") {
         return console.log("buldum");
@@ -18,7 +35,7 @@ function findPath(arr, index) {
    return findPath(index+1);
 }
 
-findPath(ul, 0);
+findPath(ul, 0); */
 
 
 
