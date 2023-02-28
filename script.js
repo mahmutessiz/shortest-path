@@ -1,41 +1,39 @@
 const ul = document.querySelector("#ul");
+const ul1 = document.querySelector("#ul").children;
 const start = document.querySelector("#start");
 const finish = document.querySelector("#finish");
 
+ 
 
-
-function choose(event) {
+ function choose(event) {
     console.log(event);
-    if (event.target.id ==  "ul") {
-         return;
+
+   if (event.target.id ==  "ul") {
+       return;
     }else{
+        console.log(event.target.innerText)
        event.target.style.backgroundColor= "#ff0000";
+       event.target.classList.add("target");
     }
-    
+
+   for (let i = 0; i < ul1.length; i++) {
+
+            if (ul1[i].innerText == event.target.innerText) {
+             console.log("deneme");
+ 
+            }if (Number(ul1[i].innerHTML) + 1 == event.target.innerHTML) {
+                console.log("idene");
+                console.log(event.target.style);
+                ul1[i].style.backgroundColor= "#ff0000";
+             }
+            
+        }
+
 }
 
 ul.addEventListener('click', choose);
 
 
-
-
-
-
-
-/* function findPath(arr, index) {
-    // exit
-    if (arr[11].innerHTML == Number && arr[index].id != "wall") {
-        return console.log("buldum");
-    }
-    // main
-    if (arr[index].innerHTML > 0) {
-        arr[index].innerHTML = "deneme";
-    }
-
-   return findPath(index+1);
-}
-
-findPath(ul, 0); */
 
 
 
