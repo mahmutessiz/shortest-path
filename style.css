@@ -5,12 +5,13 @@
 }
 
 ul {
-    width: 50%;
+    width: fit-content;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     list-style: none;
     gap: 0.5rem;
-    border: 2px solid black;
+    border: 2px solid rgb(141, 143, 32);
+    background-color: rgb(76, 38, 112);
 }
 div {
     width: 100%;
