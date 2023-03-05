@@ -1,43 +1,33 @@
 const ul = document.querySelector("#ul");
 const ul1 = document.querySelector("#ul").children;
+const list = document.querySelectorAll("li");
 const start = document.querySelector("#start");
 const finish = document.querySelector("#finish");
 
 const red = "#ff0000";
 let magicNumber;
-
+let arr = [];
 
 function choose(event) {
-     magicNumber = Number(event.target.innerText);
-     console.log(event)
+    magicNumber = Number(event.target.innerText);
+    console.log(event);
 
     if (event.target.id == "ul") {
         return;
     } else if (event.target.id == !"wall") {
-            event.target.style.backgroundColor = red;
-             event.target.classList.add("target"); 
-        }
-    
+        event.target.style.backgroundColor = red;
+        event.target.classList.add("target");
 
-    for (let i = 0; i < ul1.length; i++) {
+        list.forEach((element)=>{
 
-        
+            arr.push(element.innerHTML);
 
+        });
+        console.log(arr);
+    }
+}
 
-          if (ul1[i].innerText == magicNumber && magicNumber > 0 && ul1[i].id== !"wall") {
-            magicNumber--;
-            console.log(magicNumber);
-            console.log(ul1[i]);
-            
-        
-        if (ul1[i].className == "target") {
-            console.log(i);
-        }
-            
-        } 
-
-
-
+ul.addEventListener("click", choose);
 
 /*         if (ul1[i].innerHTML == "hi") {
             console.log(ul1[i - 1].innerHTML);
@@ -55,17 +45,13 @@ function choose(event) {
             }
         } */
 
-        /* if (Number(ul1[i].innerHTML) + 1 == event.target.innerHTML) {
+/* if (Number(ul1[i].innerHTML) + 1 == event.target.innerHTML) {
 
                 console.log("idene");
                 console.log(event.target.style);
                 ul1[i].style.backgroundColor= "#ff0000";
 
              }  */
-    }
-}
-
-ul.addEventListener("click", choose);
 
 /* if (finish.innerHTML == "0") {
     ul[88].innerHTML += Number(finish.innerHTML) + 1;
