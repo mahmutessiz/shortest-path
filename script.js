@@ -1,5 +1,4 @@
 const ul = document.querySelector("#ul");
-const ul1 = document.querySelector("#ul").children;
 const list = document.querySelectorAll("li");
 const start = document.querySelector("#start");
 const finish = document.querySelector("#finish");
@@ -27,8 +26,8 @@ function choose(event) {
         event.target.classList.add("target");
 
         for (let i = 0; i < list.length; i++) {
-            if ( list[i].innerHTML == arr[i].innerHTML) {
-                console.log("deneme")
+            if ( arr[i-1] == 19) {
+                console.log(list[i].innerHTML);
             }     
             
         }
