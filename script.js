@@ -26,7 +26,12 @@ function choose(event) {
         event.target.classList.add("target");
 
         for (let i = 0; i < list.length; i++) {
-            if ( arr[i-1] == 19) {
+
+            /* geriden sayma yapmak için hep 100'den indexi çıkaracak. örnek: 56. indexte ise i, j = 100-56 olacak */
+            let j = list.length - i;
+
+            /* hangi koşulda ne olacağını belirlemek için */
+            if ( arr[i] == event.target.innerText ) {
                 console.log(list[i].innerHTML);
             }     
             
