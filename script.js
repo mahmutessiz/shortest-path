@@ -14,7 +14,6 @@ list.forEach((element) => {
 });
 console.log(arr);
 
-
 function choose(event) {
     magicNumber = Number(event.target.innerText);
     console.log(event);
@@ -26,15 +25,19 @@ function choose(event) {
         event.target.classList.add("target");
 
         for (let i = 0; i < list.length; i++) {
-
-            /* geriden sayma yapmak için hep 100'den indexi çıkaracak. örnek: 56. indexte ise i, j = 100-56 olacak */
-            let j = list.length - i;
+            let j = i - 1;
+            let k = i - 10;
 
             /* hangi koşulda ne olacağını belirlemek için */
-            if ( arr[i] == event.target.innerText ) {
-                console.log(list[i].innerHTML);
-            }     
-            
+            if (arr[i] == magicNumber) {
+                if (event.target.innerText != "") {
+                    console.log(j, i);
+
+                    if (list[j].innerHTML != "") {
+                        list[j].style.backgroundColor = "#ff0000";
+                    }
+                }
+            }
         }
     }
 }
